@@ -5,13 +5,16 @@ This plugin breaks lines at a specific character.
 
 ##Before
 
-  test, test2, test3
+```
+test, test2, test3
+```
 
 ##After
-
-  test,
-   test2,
-   test3
+```
+test,
+ test2,
+ test3
+```
 
 #MAPPINGS
 
