@@ -18,7 +18,7 @@ test, test2, test3
 ```
 
 ##After
-&lt;Leader&gt;press ba,
+&lt;Leader&gt;ba,
 ```
 test,
  test2,
