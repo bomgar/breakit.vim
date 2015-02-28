@@ -19,5 +19,7 @@ test,
 #MAPPINGS
 
 Default mappings:
+```
   nmap <Leader>ba <Plug>Bafter
   nmap <Leader>bb <Plug>Bbefore
+```
