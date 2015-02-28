@@ -16,17 +16,19 @@ function! s:getchar()
 endfunction
 
 function! s:BreakAfter()
+  echo "break after"
   let l:breakchar = s:getchar()
   execute 'substitute/\V\(' . l:breakchar . '\)/\1\r/g'
 endfunction
 
 function! s:BreakBefore()
+  echo "break before"
   let l:breakchar = s:getchar()
   execute 'substitute/\V\(' . l:breakchar . '\)/\r\1/g'
 endfunction
 
-nnoremap <silent> <Plug>BreakAfter :call BreakAfter()<CR>
-nnoremap <silent> <Plug>BreakBefore :call BreakBefore()<CR>
+nnoremap <Plug>BreakAfter :call BreakAfter()<CR>
+nnoremap <Plug>BreakBefore :call BreakBefore()<CR>
 
 
 if !exists("g:breakit_no_mappings") || ! g:breakit_no_mappings
