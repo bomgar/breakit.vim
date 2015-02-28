@@ -27,13 +27,12 @@ function! s:BreakBefore()
   execute 'substitute/\V\(' . l:breakchar . '\)/\r\1/g'
 endfunction
 
-nnoremap <Plug>BreakAfter :call BreakAfter()<CR>
-nnoremap <Plug>BreakBefore :call BreakBefore()<CR>
 
+
+nnoremap <silent> <Plug>Bafter :call <SID>BreakAfter()<CR>
+nnoremap <silent> <Plug>Bbefore :call <SID>BreakBefore()<CR>
 
 if !exists("g:breakit_no_mappings") || ! g:breakit_no_mappings
-  nnoremap <Leader>sa <Plug>BreakAfter
-  nnoremap <Leader>ba <Plug>BreakAfter
-  nnoremap <Leader>bb <Plug>BreakBefore
-  nnoremap <Leader>sb <Plug>BreakBefore
+  nmap <Leader>ba <Plug>Bafter
+  nmap <Leader>bb <Plug>Bbefore
 end
