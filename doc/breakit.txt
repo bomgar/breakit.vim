@@ -1,0 +1,23 @@
+*breakit.txt*  Plugin for breaking lines
+
+Author:  Patrick Haun
+License: Same terms as Vim itself (see |license|)
+
+INTRODUCTION                                    *breakit*
+
+This plugin breaks lines at a specigic character.
+
+MAPPINGS                                        *breakit-mappings*
+
+Default mappings:
+>
+  nmap <Leader>ba <Plug>Bafter
+  nmap <Leader>bb <Plug>Bbefore
+<
+CUSTOMIZING                                     *breakit-customizing*
+
+Disable default mappings
+>
+  let g:breakit_no_mappings=1
+<
+ vim:tw=78:ts=8:ft=help:norl:
