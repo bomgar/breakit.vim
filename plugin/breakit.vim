@@ -7,8 +7,6 @@ if exists("g:loaded_breakit") || &cp || v:version < 700
 endif
 let g:loaded_breakit = 1
 
-" Input functions {{{1
-
 function! s:getchar()
   let c = getchar()
   if c =~ '^\d\+$'
@@ -32,6 +30,8 @@ nnoremap <silent> <Plug>BreakBefore :call BreakBefore()<CR>
 
 
 if !exists("g:breakit_no_mappings") || ! g:breakit_no_mappings
+  nnoremap <Leader>sa <Plug>BreakAfter
   nnoremap <Leader>ba <Plug>BreakAfter
   nnoremap <Leader>bb <Plug>BreakBefore
+  nnoremap <Leader>sb <Plug>BreakBefore
 end
