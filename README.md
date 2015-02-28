@@ -1,5 +1,5 @@
 
-#INTRODUCTION
+#Introduction
 
 This plugin breaks lines at a specific character.
 
@@ -16,7 +16,7 @@ test,
  test3
 ```
 
-#MAPPINGS
+#Mappings
 
 Default mappings:
 ```
