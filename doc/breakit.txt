@@ -5,7 +5,7 @@ License: Same terms as Vim itself (see |license|)
 
 INTRODUCTION                                    *breakit*
 
-This plugin breaks lines at a specigic character.
+This plugin breaks lines at a specific character.
 
 MAPPINGS                                        *breakit-mappings*
 
