@@ -1,6 +1,6 @@
 " breakit.vim - Break lines
 " Author:       Patrick Haun
-" Version:      0.1
+" Version:      0.2
 
 if exists("g:loaded_breakit") || &cp || v:version < 700
   finish
