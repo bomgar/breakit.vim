@@ -25,7 +25,7 @@ function! s:BreakBeforeChar()
   call s:BreakBefore(l:breakchar)
 endfunction
 
-function! s:BreakAfterCharCharWithSpace()
+function! s:BreakAfterCharRemoveSpace()
   let l:breakchar = s:getchar()
   let l:breakString = l:breakchar
   call s:BreakAfter(l:breakchar, " ")
@@ -40,11 +40,11 @@ function! s:BreakBefore(breakString)
 endfunction
 
 nnoremap <silent> <Plug>Bafter :<C-U>call <SID>BreakAfterChar()<CR>
-nnoremap <silent> <Plug>Bafter_include_space :<C-U>call <SID>BreakAfterCharCharWithSpace()<CR>
+nnoremap <silent> <Plug>Bafter_remove_space :<C-U>call <SID>BreakAfterCharRemoveSpace()<CR>
 nnoremap <silent> <Plug>Bbefore :<C-U>call <SID>BreakBeforeChar()<CR>
 
 if !exists("g:breakit_no_mappings") || ! g:breakit_no_mappings
   nmap <Leader>ba <Plug>Bafter
-  nmap <Leader>bA <Plug>Bafter_include_space
+  nmap <Leader>bA <Plug>Bafter_remove_space
   nmap <Leader>bb <Plug>Bbefore
 end
