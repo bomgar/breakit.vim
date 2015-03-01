@@ -15,22 +15,36 @@ function! s:getchar()
   return c
 endfunction
 
-function! s:BreakAfter()
+function! s:BreakAfterChar()
   let l:breakchar = s:getchar()
-  execute 'substitute/\V\(' . l:breakchar . '\)/\1\r/g'
+  call s:BreakAfter(l:breakchar, "")
 endfunction
 
-function! s:BreakBefore()
+function! s:BreakBeforeChar()
   let l:breakchar = s:getchar()
-  execute 'substitute/\V\(' . l:breakchar . '\)/\r\1/g'
+  call s:BreakBefore(l:breakchar)
 endfunction
 
+function! s:BreakAfterCharCharWithSpace()
+  let l:breakchar = s:getchar()
+  let l:breakString = l:breakchar
+  call s:BreakAfter(l:breakchar, " ")
+endfunction
 
+function! s:BreakAfter(breakString, additionalMatch)
+  execute 'substitute/\V\(' . a:breakString . '\)' . a:additionalMatch . '/\1\r/g'
+endfunction
 
-nnoremap <silent> <Plug>Bafter :<C-U>call <SID>BreakAfter()<CR>
-nnoremap <silent> <Plug>Bbefore :<C-U>call <SID>BreakBefore()<CR>
+function! s:BreakBefore(breakString)
+  execute 'substitute/\V\(' . a:breakString . '\)/\r\1/g'
+endfunction
+
+nnoremap <silent> <Plug>Bafter :<C-U>call <SID>BreakAfterChar()<CR>
+nnoremap <silent> <Plug>Bafter_include_space :<C-U>call <SID>BreakAfterCharCharWithSpace()<CR>
+nnoremap <silent> <Plug>Bbefore :<C-U>call <SID>BreakBeforeChar()<CR>
 
 if !exists("g:breakit_no_mappings") || ! g:breakit_no_mappings
   nmap <Leader>ba <Plug>Bafter
+  nmap <Leader>bA <Plug>Bafter_include_space
   nmap <Leader>bb <Plug>Bbefore
 end
