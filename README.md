@@ -13,6 +13,8 @@ This plugin breaks lines at a specific character.
 <Leader>bb. - break before dot
 ```
 
+This should work for any character.
+
 ##Before
 
 ```
