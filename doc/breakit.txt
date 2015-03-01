@@ -19,13 +19,13 @@ This plugin breaks lines at a specific character.
 >
   test, test2, test3
 
-|After| <Leader>ba
+|After| <Leader>ba,
 >
   test,
  test2,
  test3
 <
-|After| <Leader>bA
+|After| <Leader>bA,
   test,
 test2,
 test3
